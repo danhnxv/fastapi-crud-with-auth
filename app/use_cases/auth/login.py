@@ -44,7 +44,6 @@ class LoginUseCase(use_case.UseCase):
 
     def process_request(self, req_object: LoginRequestObject):
         # authenticate user with auth info
-        print("req_object===323", req_object.login_info)
         user: UserModel = self.security_service.authenticate_user(
             username=req_object.login_info.username,
             password=req_object.login_info.password,

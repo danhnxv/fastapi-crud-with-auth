@@ -34,7 +34,6 @@ class ListJobUseCase(use_case.UseCase):
             page_size=req_object.page_size,
         )
         total = self.job_repository.count({"owner": req_object.current_user.id})
-        print(req_object)
         return ManyJobsInResponse(
             pagination=Pagination(
                 total=total,

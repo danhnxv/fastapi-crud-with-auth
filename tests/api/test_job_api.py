@@ -48,7 +48,6 @@ class TestClientApi(unittest.TestCase):
                 },
             )
             assert r.status_code == 200
-            print(r.json())
             job = JobModel.objects(id=r.json().get("id")).get()
             assert job.owner.username == "danhnv"
 
